@@ -149,7 +149,7 @@ public class ControladorUsuario {
             modelo.setContrasena(contra);
             modelo.setPermiso(permiso);
             //modelo.setImagen(foto);
-            if (nombre.isEmpty() || contra.isEmpty()) {
+            if (!nombre.isEmpty() || !contra.isEmpty()) {
 
                 if (modelo.GrabaUsuarioDB() == null) {
                     JOptionPane.showMessageDialog(null, "SE HA CREADO A LA PERSONA CON ÉXITO");
@@ -166,7 +166,7 @@ public class ControladorUsuario {
             String contra = vista.getTxtContra().getText();
             boolean permiso = vista.getCckPermisos().isSelected();
             //byte foto = Byte.parseByte(vista.getLblImg().getText());
-            if (nombre.isEmpty() || contra.isEmpty() || id.isEmpty()) {
+            if (!nombre.isEmpty() || !contra.isEmpty() || !id.isEmpty()) {
                 modelo.setIdUsuario(Integer.parseInt(id));
                 modelo.setNombre(nombre);
                 modelo.setContrasena(contra);
